@@ -1,0 +1,8 @@
+name: ProxyKicker
+main: org.s4x8.bukkit.proxykicker.ProxyKicker
+authors: socram8888
+version: 1.0
+permissions:
+  proxykicker.bypass:
+    default: op
+    description: Skips proxy check

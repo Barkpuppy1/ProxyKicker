@@ -1,0 +1,21 @@
+# ProxyKicker configuration file
+
+# Expiration of proxy list cache, in milliseconds. By default, a week. Setting this value to zero or less will disable caching.
+tor-update-interval: 604800000
+# Unix time of last update. This value should not be modified manually. A value of zero or less forces an update
+tor-update-date: -1
+
+# Put on this list feeds for the Tor exit nodes
+tor-list:
+- http://torstatus.blutmagie.de/ip_list_all.php/Tor_ip_list_ALL.csv
+
+# Every time an user connects, ProxyKicker will scan for these ports on his/her endpoint, and will kick him/her if one of the port is open
+proxy-ports:
+- 3127
+- 3128
+- 1080
+- 6666
+- 6668
+- 6667
+- 6673
+- 42321
