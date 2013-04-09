@@ -18,7 +18,6 @@ import java.util.ArrayList;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class ProxyKicker extends JavaPlugin {
-	private Kicker kicker;
 	private ArrayList<Integer> proxyPorts;
 	private TorDatabase torDatabase;
 	private boolean disableTorCache;
