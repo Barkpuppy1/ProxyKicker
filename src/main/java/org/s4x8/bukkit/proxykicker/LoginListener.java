@@ -4,7 +4,7 @@ package org.s4x8.bukkit.proxykicker;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
-import org.bukkit.event.player.PlayerJoinEvent;
+import org.bukkit.event.player.PlayerLoginEvent;
 
 public class LoginListener implements Listener {
 	private ProxyKicker plugin;
@@ -14,7 +14,7 @@ public class LoginListener implements Listener {
 	}
 	
 	@EventHandler
-	public void onPlayerLogin(PlayerJoinEvent event) {
+	public void onPlayerLogin(PlayerLoginEvent event) {
 		Player player = event.getPlayer();
 		
 		if (player.hasPermission("proxykicker.bypass")) {
@@ -23,7 +23,7 @@ public class LoginListener implements Listener {
 
 		if (plugin.getTorDatabase().isTorIp(player.getAddress().getAddress())) {
 			plugin.getLogger().info("Kicking " + player.getName() + " because his/her IP is in the Tor database");
-			player.kickPlayer("Your IP is on the server Tor database");
+			player.kickPlayer("Your IP is on the Tor database");
 		};
 		
 		(new PortChecker(plugin, player)).start();

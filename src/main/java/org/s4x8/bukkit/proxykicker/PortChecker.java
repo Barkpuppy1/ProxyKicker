@@ -27,7 +27,8 @@ public class PortChecker extends Thread {
 			
     			if (hasPortOpen(ip, port)) {
 				plugin.getLogger().info("Kicking " + player.getName() + " because he/she has port " + port + " open");
-				plugin.getServer().getScheduler().runTask(plugin, new Kicker(player));
+				Kicker kicker = new Kicker(player, "You have been kicked because you have port " + port + " open");
+				plugin.getServer().getScheduler().runTask(plugin, kicker);
     				return; //it is not necessary to continue looping
     			};
     		};

@@ -5,14 +5,16 @@ import org.bukkit.entity.Player;
 
 public class Kicker implements Runnable {
 	private Player player;
+	private String reason;
 
-	public Kicker(Player player) {
+	public Kicker(Player player, String reason) {
 		this.player = player;
+		this.reason = reason;
 	}
 
 	public void run() {
 		try {
-			player.kickPlayer("It is not allowed to use a proxy to connect to this server!");
+			player.kickPlayer(reason);
 		} catch (Exception e) { };
 	}
 }
