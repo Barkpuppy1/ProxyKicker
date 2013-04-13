@@ -6,6 +6,8 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerLoginEvent;
 
+import java.net.InetAddress;
+
 public class LoginListener implements Listener {
 	private ProxyKicker plugin;
 
@@ -21,11 +23,12 @@ public class LoginListener implements Listener {
 			return; // This player is exempt of checking
 		};
 
-		if (plugin.getTorDatabase().isTorIp(player.getAddress().getAddress())) {
+		InetAddress playerAddress = event.getAddress();
+		if (plugin.getTorDatabase().isTorIp(playerAddress)) {
 			plugin.getLogger().info("Kicking " + player.getName() + " because his/her IP is in the Tor database");
-			player.kickPlayer("Your IP is on the Tor database");
+			event.disallow(PlayerLoginEvent.Result.KICK_OTHER, "Your IP is on the Tor database");
 		};
 		
-		(new PortChecker(plugin, player)).start();
+		(new PortChecker(plugin, event)).start();
 	};
 };

@@ -1,24 +1,26 @@
 
 package org.s4x8.bukkit.proxykicker;
 
+import org.bukkit.entity.Player;
+import org.bukkit.event.player.PlayerLoginEvent;
+
 import java.net.InetAddress;
 import java.net.InetSocketAddress;
 import java.net.Socket;
 import java.util.Iterator;
 
-import org.bukkit.entity.Player;
-
 public class PortChecker extends Thread {
 	private ProxyKicker plugin;
-	private Player player;
+	private PlayerLoginEvent event;
     
-	public PortChecker(ProxyKicker plugin, Player player){
+	public PortChecker(ProxyKicker plugin, PlayerLoginEvent event) {
 		this.plugin = plugin;
-		this.player = player;
+		this.event = event;
 	}
 
 	public void run() {
-		InetAddress ip = player.getAddress().getAddress(); // Player -> InetSocketAddress -> InetAddress
+		Player player = event.getPlayer();
+		InetAddress ip = event.getAddress();
 
 		Iterator<Integer> it = plugin.getProxyPorts().iterator();
 
