@@ -1,4 +1,4 @@
-S4X8 ProxyKicker 1.0 (08/IV/2013)
+S4X8 ProxyKicker 1.1 (13/IV/2013)
 =================================
 
 What is this?
