@@ -4,7 +4,7 @@ S4X8 ProxyKicker
 What is this?
 -------------
 
-This is a plugin for [Bukkit] made to block connections from anonymous and publicproxies like Tor exit nodes or SOCKS proxies at the Minecraft server [Mine21].
+This is a plugin for [Bukkit] made to block connections from anonymous and public proxies like Tor exit nodes or SOCKS proxies at the Minecraft server [Mine21].
 
 Installation
 ------------
@@ -74,7 +74,7 @@ About the author
 
 My name is Marcos Vives Del Sol, aka "socram8888". I'm a 18-year-old Spanish guy who likes programming useless stuff that nobody uses. If you want to report a bug, ask for a new feature, or just say hello, you can contact me in my e-mail account <socram8888@gmail.com>.
 
-This plugin is was based on a very mature version of proxykiller, programmed by jcarlosn (who also continued developing of the plugin - see [ZeroProxy]). This initially became as a fix for some race-condition bugs it had which made the server crash, and evolved into a full rewriting of the plugin. Right now, no line from the original code has been left.
+This plugin is was based on a early version of proxykiller, programmed by jcarlosn (who also continued developing the plugin - see [ZeroProxy]). This initially became as a fix for some race-condition bugs it had which made the server crash, and evolved into a full rewriting of the plugin. Right now, no line from the original code has been left.
 
   [Bukkit]: http://www.bukkit.org/
   [Maven 2]: http://maven.apache.org/
